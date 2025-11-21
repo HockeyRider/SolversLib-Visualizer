@@ -1,37 +1,25 @@
-interface BasePoint {
-  x: number;
-  y: number;
+interface LogEntry {
+  timestamp: string;
+  type: string;
+  name: string;
+  value: any;
 }
 
-type Point = BasePoint &
-  (
-    | {
-        heading: "linear";
-        startDeg: number;
-        endDeg: number;
-        degrees?: never;
-        reverse?: never;
-      }
-    | {
-        heading: "constant";
-        degrees: number;
-        startDeg?: never;
-        endDeg?: never;
-        reverse?: never;
-      }
-    | {
-        heading: "tangential";
-        degrees?: never;
-        startDeg?: never;
-        endDeg?: never;
-        reverse: boolean;
-      }
-  );
+interface Pose2d {
+  x: number;
+  y: number;
+  heading: number;
+}
 
-type ControlPoint = BasePoint;
+interface ParsedLogData {
+  entries: LogEntry[];
+  variables: Map<string, LogVariable>;
+}
 
-interface Line {
-  endPoint: Point;
-  controlPoints: ControlPoint[];
+interface LogVariable {
+  name: string;
+  type: string;
+  values: { timestamp: string; value: any; index: number }[];
   color: string;
+  visible: boolean;
 }
