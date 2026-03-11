@@ -10,6 +10,7 @@ This project is underneath the Apache License, like the Pedro Pathing visualizer
 - Replaced `.pp` files with `.p2p` files on export/import, which only supports lines
   - Note that if you import at `.pp` file, it will try to turn it into a single line per control point
 - Added full support for light mode, including a light mode field (credit to 16236 Juice for all fields)
+- Added Java code import functionality - paste raw Java code snippets containing Pose2d points to visualize paths directly
 
 <table>
 <tr>
@@ -72,6 +73,7 @@ You can control animations and lines starting point:
 <font size="5">
 <ul>
   <li><b>Export/Import .p2p files</b></li>
+  <li><b>Import Java Code - paste raw Pose2d snippets to visualize</b></li>
   <li><b>Clear All lines made</b></li>
   <li><b>Export the Path to Code - add to other projects</b></li>
   <li><b>Change to Light Mode!</b></li>
